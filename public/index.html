@@ -1,0 +1,25 @@
+<script src="https://unpkg.com/htmx.org@1.9.11"></script>
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!--have a button POST a click via AJAX -->
+
+<body>
+  <div class="text-center">
+    <button hx-get="/users" hx-target="#users-list" class="bg-blue-500 text-white py-2 px-3 my-5">
+      Fetch Users
+    </button>
+    <button hx-get="/usersLoader" hx-target="#users-list-loader" hx-indicator="#loading"
+      class="bg-blue-500 text-white py-2 px-3 my-5">
+      Fetch Users Using Loader
+    </button>
+
+    <span class="htmx-indicator text-center" id="loading">
+      <img class="m-auto h-10" src="./image/loader.gif" />
+    </span>
+
+    <div id="users-list"></div>
+    <div id="users-list-loader"></div>
+
+
+  </div>
+</body>
